@@ -1,0 +1,51 @@
+@import 'setup/_breakpoints';
+
+body {
+    background: #e1e1e1;
+
+}
+#clock {
+    border: 1px solid black;
+    background: white;
+    padding: 20px;
+    display: flex;
+    margin: 20px;
+    div {
+        flex-basis: 33.33%;
+        display: flex;
+        flex-wrap: wrap;
+
+        span, p {
+            flex-basis: 100%;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        span {
+            font-size: 26px;
+        }
+    }
+}
+.buttons {
+    margin-top: 12px;
+    display: flex;
+    margin: 20px;
+    flex-direction: row-reverse;
+    button {
+        margin-left: 12px;
+        padding: 12px;
+        font-size: 14px;
+        &.btn-primary {
+            background: green;
+            color: white;
+        }
+        &.btn-danger {
+            background: red;
+        }
+    }
+}
+:focus {
+    border: none;
+    outline: none;
+}

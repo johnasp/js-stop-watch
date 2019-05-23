@@ -1,0 +1,55 @@
+/********************
+BREAKPOINTS
+********************/
+body {
+  background: #e1e1e1;
+}
+
+#clock {
+  border: 1px solid black;
+  background: white;
+  padding: 20px;
+  display: flex;
+  margin: 20px;
+}
+#clock div {
+  flex-basis: 33.33%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#clock div span, #clock div p {
+  flex-basis: 100%;
+  text-align: center;
+}
+#clock div p {
+  margin-bottom: 0;
+}
+#clock div span {
+  font-size: 26px;
+}
+
+.buttons {
+  margin-top: 12px;
+  display: flex;
+  margin: 20px;
+  flex-direction: row-reverse;
+}
+.buttons button {
+  margin-left: 12px;
+  padding: 12px;
+  font-size: 14px;
+}
+.buttons button.btn-primary {
+  background: green;
+  color: white;
+}
+.buttons button.btn-danger {
+  background: red;
+}
+
+:focus {
+  border: none;
+  outline: none;
+}
+
+/*# sourceMappingURL=main.css.map */
