@@ -94,27 +94,12 @@ module.exports = function (grunt) {
           },
         },
 
-        copy: {
-          build: {
-            cwd: 'src',
-            src: [ '**' ],
-            dest: 'build',
-            expand: true
-          },
-        },
-
         connect: {
             site1: {
               options: {
                 port: 9000,
                 base: 'src',
                 livereload: true
-              }
-            },
-            site2: {
-              options: {
-                port: 9001,
-                base: 'build'
               }
             }
           },      
@@ -155,15 +140,11 @@ module.exports = function (grunt) {
     grunt.registerTask(
         'default', [
                 'sass',
-                'cssmin',
-                'imagemin',
                 'htmlhint',
-                'copy',
                 'concat',
                 'connect',
                 'watch'
             ]
     );
-    grunt.registerTask('bollox', ['htmlhint', 'imagemin']);
 
 };
