@@ -57,12 +57,11 @@ stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
         stopStart = setInterval(startClock,1000);
-        console.log("clock started");
+        console.log("YOU STARTED ME UP!!  IM GOING TO KICK YA AND NIP YA!");
     }  
     else {
         clearInterval(stopStart);
         stopStart = 0;
-        startButton.document.innerHTML("START");
-        console.log("STOPPED");
+        console.log("you stopped ME!!!!");
     }
 }

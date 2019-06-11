@@ -6,11 +6,11 @@ body {
 }
 
 #clock {
-  border: 1px solid black;
-  background: white;
+  background: black;
   padding: 20px;
   display: flex;
   margin: 20px;
+  border-radius: 12px;
 }
 #clock div {
   flex-basis: 33.33%;
@@ -23,9 +23,17 @@ body {
 }
 #clock div p {
   margin-bottom: 0;
+  font-family: serif;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  margin-top: 0;
 }
 #clock div span {
-  font-size: 26px;
+  font-size: 48px;
+  font-family: "Orbitron", sans-serif;
+  color: #F21622;
+  font-weight: bold;
 }
 
 .buttons {
@@ -40,8 +48,21 @@ body {
   font-size: 14px;
 }
 .buttons button.btn-primary {
-  background: green;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#8fc400+1,0035f7+100 */
+  background: #8fc400;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #8fc400 1%, #0035f7 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #8fc400 1%, #0035f7 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #8fc400 1%, #0035f7 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#8fc400", endColorstr="#0035f7",GradientType=1 );
+  /* IE6-9 */
   color: white;
+  font-size: 30px;
+  border-radius: 100%;
+  padding: 55px;
 }
 .buttons button.btn-danger {
   background: red;
