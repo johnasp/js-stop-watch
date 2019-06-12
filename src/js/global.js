@@ -57,11 +57,23 @@ stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
         stopStart = setInterval(startClock,1000);
-        console.log("YOU STARTED ME UP!!  IM GOING TO KICK YA AND NIP YA!");
+        startButton.textContent = "Stop";
+        startButton.classList.add("stopped");
+        console.log("Started");
     }  
     else {
         clearInterval(stopStart);
         stopStart = 0;
-        console.log("you stopped ME!!!!");
+        startButton.textContent = "Start";
+        startButton.classList.remove("stopped");
+
+        console.log("Stopped");
     }
 }
+
+// Reset the clock 
+
+var resetButton = document.getElementById("reset");
+resetButton.onclick = function(){
+    alert("yo");
+};
