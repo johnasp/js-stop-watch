@@ -49,31 +49,31 @@ function changeHours(){
     hourCounter++;
 }
 
-// Capture the start button element into a variable
-var startButton = document.getElementById("start");
-
 // Start and stop the clock when button is pressed
+var startButton = document.getElementById("start");
 stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
-        stopStart = setInterval(startClock,1000);
+        stopStart = setInterval(startClock,1);
         startButton.textContent = "Stop";
         startButton.classList.add("stopped");
-        console.log("Started");
     }  
     else {
         clearInterval(stopStart);
         stopStart = 0;
         startButton.textContent = "Start";
         startButton.classList.remove("stopped");
-
-        console.log("Stopped");
     }
 }
 
 // Reset the clock 
-
 var resetButton = document.getElementById("reset");
 resetButton.onclick = function(){
-    alert("yo");
+    secsField.innerHTML =  0;
+    counter = 0;
+    minsField.innerHTML =  0;
+    minCounter = 0;
+    hoursField.innerHTML =  0;
+    hourCounter = 0;
+
 };
