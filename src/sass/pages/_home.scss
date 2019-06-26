@@ -1,1 +1,73 @@
 /* _-_-_- pages/HOME -_-_-_ */
+
+#clock {
+    background: black;
+    padding: 20px;
+    display: flex;
+    margin: 20px;
+    border-radius: 12px;
+
+
+    div {
+        flex-basis: 33.33%;
+        display: flex;
+        flex-wrap: wrap;
+
+        span, p {
+            flex-basis: 100%;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 0;
+            font-family: serif;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            margin-top: 0;
+
+        }
+        span {
+            font-size: 48px;
+            font-family: 'Orbitron', sans-serif;
+            color: #F21622;
+            font-weight: bold;
+        }
+    }
+}
+.buttons {
+    margin-top: 12px;
+    display: flex;
+    margin: 20px;
+    flex-direction: row-reverse;
+    button {
+        padding: 12px;
+        font-size: 18px;
+        padding: 12px 22px;
+        border-radius: 5px;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    #start {
+        margin-left: 12px;
+        background: green;
+        color: white;
+        &:hover {
+            background: darkgreen;
+        }
+        &.stopped {
+            background: red;
+        }
+    }
+    #reset {
+        border: 1px solid #aaa;
+        &:hover {
+            background: #eaeaea;
+        }
+    }
+}
+:focus {
+    border: none;
+    outline: none;
+}
