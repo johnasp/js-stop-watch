@@ -23,20 +23,8 @@ module.exports = function (grunt) {
 
         concat: {
             js: {
-                src: ['build/js/**/*.js'], //any folder, any .js file
-                dest: 'build/js/production.js',
-            }
-        },
-
-        uglify: {
-            options: {
-                mangle: false
-                //sourceMap: true
-            },
-            js: {
-                files: {
-                    'src/js/production.min.js': ['src/js/production.js']
-                }
+                src: ['src/js/**/*.js'], //any folder, any .js file
+                dest: 'src/js/bundle.js',
             }
         },
 
@@ -66,8 +54,8 @@ module.exports = function (grunt) {
 
         cssmin: {
             build: {
-                src: 'build/css/main.css',
-                dest: 'build/css/main.min.css'
+                src: 'src/css/main.css',
+                dest: 'src/css/main.min.css'
             }
         },
 
@@ -87,15 +75,9 @@ module.exports = function (grunt) {
                 src: ['src/*.html']
             }
         },
-        
-        clean: {
-          build: {
-            src: [ 'build' ]
-          },
-        },
 
         connect: {
-            site1: {
+            dev: {
               options: {
                 port: 9000,
                 base: 'src',
@@ -117,10 +99,6 @@ module.exports = function (grunt) {
                 files: ['src/img/*.*'],
                 tasks: ['imagemin'],
             },
-            scripts: {
-                files: ['src/js/*.js'],
-                tasks: ['concat', 'uglify'],
-            },
             html: {
                 files: ['src/*.html'],
                 tasks: ['htmlhint'],
@@ -129,6 +107,14 @@ module.exports = function (grunt) {
                     livereload: true,
                 }
             },
+            js: {
+                files: ['src/js/*.js'],
+                options: {
+                    spawn: false,
+                    livereload: true,
+                }
+            },
+            
         },
     });
 
@@ -136,12 +122,13 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     // 3. Register tasks, default grunt task first
-
     grunt.registerTask(
         'default', [
                 'sass',
+                'cssmin',
+                'imagemin',
                 'htmlhint',
-                'concat',
+               // 'concat',
                 'connect',
                 'watch'
             ]

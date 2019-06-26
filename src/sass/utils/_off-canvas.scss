@@ -1,0 +1,57 @@
+/********************
+OFF CANVAS INITIALISERS
+********************/
+
+.site-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.site-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+.site-menu {
+  z-index: 1;
+  width: 88%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -88%;
+  background: white;
+}
+.site-refinements {
+  z-index: 1;
+  width: 88%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -88%;
+  background: white;
+}
+.site-wrapper.show-right .site-canvas {
+  -webkit-transform: translateX(-88%);  
+  transform: translateX(-88%);
+}
+.site-wrapper.show-left .site-canvas {
+  -webkit-transform: translateX(88%);
+  transform: translateX(88%);
+}
+
+/* =========================================
+             OVERLAY            
+/* ========================================*/
+
+.site-wrapper.show-left .overlay-left, .site-wrapper.show-right .overlay-right {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.65);
+}
