@@ -49,7 +49,7 @@ function changeHours(){
     hourCounter++;
 }
 
-// Start and stop the clock when button is pressed
+// Start button is pressed
 var startButton = document.getElementById("start");
 stopStart = 0;
 startButton.onclick = function(){
@@ -57,12 +57,14 @@ startButton.onclick = function(){
         stopStart = setInterval(startClock,1);
         startButton.textContent = "Stop";
         startButton.classList.add("stopped");
+        document.querySelector("#reset").style.display="none";
     }  
     else {
         clearInterval(stopStart);
         stopStart = 0;
         startButton.textContent = "Start";
         startButton.classList.remove("stopped");
+        document.querySelector("#reset").style.display="inline-block";
     }
 }
 
