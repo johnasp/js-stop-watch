@@ -31,6 +31,11 @@ function startClock(){
         changeMinutes();
     }
     secsField.innerHTML = secs[counter];
+    // Test for leading zeros, add if necessary
+    if (secsField.innerHTML.length === 1) {
+        var secLength = secsField.innerHTML.length;
+        console.log("Im value " +secsField.innerHTML + " and Im " + secLength + " characters in legnth." )
+    }
     counter++;
 }
 function changeMinutes(){
@@ -54,7 +59,7 @@ var startButton = document.getElementById("start");
 stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
-        stopStart = setInterval(startClock,1);
+        stopStart = setInterval(startClock,1000);
         startButton.textContent = "Stop";
         startButton.classList.add("stopped");
         document.querySelector("#reset").style.display="none";
@@ -79,3 +84,6 @@ resetButton.onclick = function(){
     hourCounter = 0;
 
 };
+
+//Prepend zero to single digit numbers 
+//Conver static numbersto start with
