@@ -30,12 +30,14 @@ function startClock(){
         counter = 0; 
         changeMinutes();
     }
-    secsField.innerHTML = secs[counter];
     // Test for leading zeros, add if necessary
     if (secsField.innerHTML.length === 1) {
-        var secLength = secsField.innerHTML.length;
-        console.log("Im value " +secsField.innerHTML + " and Im " + secLength + " characters in legnth." )
+    //var secLength = secsField.innerHTML.length;
+        var prePendZero = secsField.innerHTML;
+        prePendZero = "0" + prePendZero;
+    //console.log("Im value " +secsField.innerHTML + " and Im " + secLength + " characters in legnth." )
     }
+    secsField.innerHTML = secs[counter];
     counter++;
 }
 function changeMinutes(){
