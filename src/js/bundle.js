@@ -20,25 +20,29 @@ for (j = 0; j <=24; j++) {
 }
 
 // Create time unit counter variables
-var counter = 0;
+var secCounter = 0;
 var minCounter = 1;
 var hourCounter = 1;
 
 // The 'clock' functions
 function startClock(){
-    if (counter >=  60) {
-        counter = 0; 
+    if (secCounter >=  60) {
+        secCounter = 0; 
         changeMinutes();
     }
-    // Test for leading zeros, add if necessary
-    if (secsField.innerHTML.length === 1) {
-    //var secLength = secsField.innerHTML.length;
-        var prePendZero = secsField.innerHTML;
+    // If its a single digit number, convert number to string, add leading zero and finally replace seconds element with this value
+    if (secs[secCounter] < 10) {
+        var prePendZero = secs[secCounter];
+        prePendZero = prePendZero.toString();
         prePendZero = "0" + prePendZero;
-    //console.log("Im value " +secsField.innerHTML + " and Im " + secLength + " characters in legnth." )
+        secsField.innerHTML = prePendZero;
+        console.log(prePendZero + " and is of type " + typeof prePendZero)
     }
-    secsField.innerHTML = secs[counter];
-    counter++;
+    else {
+        secsField.innerHTML = secs[secCounter];
+    }
+
+    secCounter++;
 }
 function changeMinutes(){
     if (minCounter >= 60){
@@ -79,13 +83,10 @@ startButton.onclick = function(){
 var resetButton = document.getElementById("reset");
 resetButton.onclick = function(){
     secsField.innerHTML =  0;
-    counter = 0;
+    secCounter = 0;
     minsField.innerHTML =  0;
     minCounter = 0;
     hoursField.innerHTML =  0;
     hourCounter = 0;
 
 };
-
-//Prepend zero to single digit numbers 
-//Conver static numbersto start with
