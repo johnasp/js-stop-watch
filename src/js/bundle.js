@@ -8,13 +8,11 @@ var secs = [];
 var mins = [];
 var hours = [];
 
-// Add 0-60 to each of the min and hour arrays
+// Array stuffers
 for (i = 0; i < 60; i++) {
     secs[i] = i;
     mins[i] = i;
 }
-
-//  Add 0-24 into the hour array
 for (j = 0; j <=24; j++) {
     hours[j] = j;
 }
@@ -30,18 +28,7 @@ function startClock(){
         secCounter = 0; 
         changeMinutes();
     }
-    // If its a single digit number, convert number to string, add leading zero and finally replace seconds element with this value
-    if (secs[secCounter] < 10) {
-        var prePendZero = secs[secCounter];
-        prePendZero = prePendZero.toString();
-        prePendZero = "0" + prePendZero;
-        secsField.innerHTML = prePendZero;
-        console.log(prePendZero + " and is of type " + typeof prePendZero)
-    }
-    else {
-        secsField.innerHTML = secs[secCounter];
-    }
-
+    leadingZero();
     secCounter++;
 }
 function changeMinutes(){
@@ -65,7 +52,7 @@ var startButton = document.getElementById("start");
 stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
-        stopStart = setInterval(startClock,1000);
+        stopStart = setInterval(startClock,10);
         startButton.textContent = "Stop";
         startButton.classList.add("stopped");
         document.querySelector("#reset").style.display="none";
@@ -90,3 +77,19 @@ resetButton.onclick = function(){
     hourCounter = 0;
 
 };
+
+// Leading zero function
+// If its a single digit number, convert number to string, add leading zero and finally replace seconds element with this value
+
+function leadingZero($array, $arrayCount, $field) {
+    if (secs[secCounter] < 10) { //check  if the value in the array is less than ten
+        var prePendZero = secs[secCounter]; // Capture the array value into an object
+        prePendZero = prePendZero.toString();  // Convert data type from number to string to enable addition of leading zero
+        prePendZero = "0" + prePendZero; // Add leading to zero to number 
+        secsField.innerHTML = prePendZero; // Change the text in field to the value of the variable
+    }
+    else {
+        secsField.innerHTML = secs[secCounter];  // Run the text field change as usual
+    }
+}
+
