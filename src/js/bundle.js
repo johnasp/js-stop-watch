@@ -28,7 +28,7 @@ function startClock(){
         secCounter = 0; 
         changeMinutes();
     }
-    leadingZero();
+    addLeadingZero(secs[secCounter], secsField);
     secCounter++;
 }
 function changeMinutes(){
@@ -36,14 +36,14 @@ function changeMinutes(){
         minCounter = 0;
         changeHours();
     }
-    minsField.innerHTML = mins[minCounter];
+    addLeadingZero(mins[minCounter], minsField);
     minCounter++; 
 }
 function changeHours(){
     if (hourCounter >= 24) {
         hourCounter = 0
     }
-    hoursField.innerHTML = hours[hourCounter];
+    addLeadingZero(hours[hourCounter], hoursField);
     hourCounter++;
 }
 
@@ -52,7 +52,7 @@ var startButton = document.getElementById("start");
 stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
-        stopStart = setInterval(startClock,10);
+        stopStart = setInterval(startClock,1);
         startButton.textContent = "Stop";
         startButton.classList.add("stopped");
         document.querySelector("#reset").style.display="none";
@@ -77,19 +77,17 @@ resetButton.onclick = function(){
     hourCounter = 0;
 
 };
+//Add leading zero to single digit numbers
 
-// Leading zero function
-// If its a single digit number, convert number to string, add leading zero and finally replace seconds element with this value
-
-function leadingZero($array, $arrayCount, $field) {
-    if (secs[secCounter] < 10) { //check  if the value in the array is less than ten
-        var prePendZero = secs[secCounter]; // Capture the array value into an object
+function addLeadingZero($arr, $textField) {
+    if ($arr < 10) { //check  if the value in the array is less than ten
+        var prePendZero = $arr; // Capture the array value into an object
         prePendZero = prePendZero.toString();  // Convert data type from number to string to enable addition of leading zero
         prePendZero = "0" + prePendZero; // Add leading to zero to number 
-        secsField.innerHTML = prePendZero; // Change the text in field to the value of the variable
+        $textField.innerHTML = prePendZero; // Change the text in field to the value of the variable
     }
     else {
-        secsField.innerHTML = secs[secCounter];  // Run the text field change as usual
+        $textField.innerHTML = $arr;  // Run the text field change as usual
     }
 }
 
