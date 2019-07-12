@@ -69,11 +69,11 @@ startButton.onclick = function(){
 // Reset the clock 
 var resetButton = document.getElementById("reset");
 resetButton.onclick = function(){
-    secsField.innerHTML =  0;
+    secsField.innerHTML =  "00";
     secCounter = 0;
-    minsField.innerHTML =  0;
+    minsField.innerHTML =  "00";
     minCounter = 0;
-    hoursField.innerHTML =  0;
+    hoursField.innerHTML = "00";
     hourCounter = 0;
 
 };
