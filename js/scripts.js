@@ -77,8 +77,8 @@ resetButton.onclick = function(){
     hourCounter = 0;
 
 };
-//Add leading zero to single digit numbers
 
+//Add leading zero to single digit numbers
 function addLeadingZero($arr, $textField) {
     if ($arr < 10) { //check  if the value in the array is less than ten
         var prePendZero = $arr; // Capture the array value into an object
