@@ -52,7 +52,7 @@ var startButton = document.getElementById("start");
 stopStart = 0;
 startButton.onclick = function(){
     if (stopStart === 0) {
-        stopStart = setInterval(startClock,1);
+        stopStart = setInterval(startClock,1000);
         startButton.textContent = "Stop";
         startButton.classList.add("stopped");
         document.querySelector("#reset").style.display="none";
