@@ -10,5 +10,7 @@ I did intened to do an analogue clock face version after completing this project
 
 The setInterval() method was key to getting this working, and writing a bunch of functions and IF statements!  It won't win any design or coding challenge awards but was a fun little project nonetheless.
 
+View the 'live' app here: https://peaceful-douhua-8a2063.netlify.app/ 
+
 
 
